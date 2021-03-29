@@ -1,0 +1,194 @@
+:root {
+    --background: #1d2228;
+    --button-backgroud: #4f5b69;
+    --button-color: #e1e2e2;
+    --button-hover: rgb(255, 102, 0);
+    --text: #e1e2e2;
+    --font-size: 40px;
+}
+
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    background-color: #9ba4a7;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text);
+}
+
+#clock {
+    padding: 20px;
+    background-color: var(--background);
+    width: 800px;
+    height: 400px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-areas: 
+    "display"
+    "controls";
+}
+
+/*display*/
+
+#display {
+    height: 210px;
+    grid-area: display;
+    display: grid;
+    grid-template-areas: 
+    "break session timer"
+}
+
+#timer {
+    width: 250px;
+    grid-area: timer;
+    margin: auto;
+    display: grid;
+    grid-template-areas: 
+    "time"
+    "label";
+}
+#time-left {
+    width: 250px;
+    text-align: center;
+    grid-area: time;
+    border: 8px solid var(--button-hover);
+    border-radius: 20px;
+    margin: auto;
+    padding: 5px;
+    padding-bottom: 0px;
+    font-size: 100px;
+    margin: auto;
+}
+#timer-label {
+    grid-area: label;
+    text-align: center;
+    font-size: var(--font-size);
+    position: relative;
+    top: 10px;
+}
+#progress-bar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    color: white;
+    width: 0px;
+    z-index: -1;
+}
+
+
+#break {
+    grid-area: break;
+    display: grid;
+    grid-template-areas: 
+    "label label"
+    "length length"
+    "up down";
+}
+#break-label {
+    font-size: var(--font-size);
+    grid-area: label;
+}
+#break-length {
+    grid-area: length;
+}
+#break-decrement {
+    grid-area: down;
+    font-size: var(--font-size);
+}
+#break-increment {
+    grid-area: up;
+    font-size: var(--font-size);
+}
+
+#session {
+    grid-area: session;
+    display: grid;
+    grid-template-areas: 
+    "label label"
+    "length length"
+    "up down";
+}
+#session-label {
+    grid-area: label;
+    font-size: var(--font-size);
+}
+#session-length {
+    grid-area: length;
+}
+#session-decrement {
+    grid-area: down;
+    font-size: var(--font-size);
+}
+#session-increment {
+    grid-area: up;
+    font-size: var(--font-size);
+}
+
+.display-length {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    font-size: 100px;
+    text-align: center;
+}
+.session-break{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button {
+    display: block;
+    font-size: 30px;
+    color: var(--button-color);
+    margin: auto;
+    cursor: pointer;
+}
+.button:hover {
+    color: var(--button-hover)
+}
+/*controls*/
+
+#controls {
+    height: 150px;
+    grid-area: controls;
+    display: grid;
+    grid-template-areas: 
+    "start-stop reset";
+}
+
+#start_stop {
+    grid-area: start-stop;
+    font-size: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    text-align: center;
+}
+#pause-text {
+    font-size: 30px;
+}
+#resume-text {
+    font-size: 30px;
+}
+
+#reset {
+    grid-area: reset;
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    text-align: center;
+}
+#reset-text {
+    font-size: 30px;
+    text-align: center;
+}
+#hourglass {
+    font-size: 100px;
+}
